@@ -37,8 +37,8 @@ class Meteorology extends React.Component {
         {this.props.errorMessage &&
           <p style={{color: 'red'}}><b>{this.props.errorMessage}</b></p>
         }
-        {weatherData.nessage &&
-          <p style={{color: 'red'}}><b>{weatherData.nessag}</b></p>
+        {weatherData.message &&
+          <p style={{color: 'red'}}><b>{weatherData.message}</b></p>
         }
         <ul className="list-group">
           {searchMarkup}
