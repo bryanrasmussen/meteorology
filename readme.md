@@ -8,4 +8,11 @@
 6. npm start will start it up
 7. go to localhost:3000 to see it working.
 
+## Notes
+
+Did not use redux because in the end it turned out the state management on the client side was too simple to require it.
+
+Turn off javascript to get server rendered version.
+
+
 
