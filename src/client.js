@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Meteorology from './components/Meteorology';
 import 'whatwg-fetch'
 
