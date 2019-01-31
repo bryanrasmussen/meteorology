@@ -20,6 +20,7 @@ class Client extends React.Component {
         window.onpopstate = (event) => {
             if (event.state && event.state.name) {
                 this.setState({weatherData: event.state});
+                return;
             }
             if (window.location.href.search("[?&]city=") === -1) {
                 document.location = window.location.href;
@@ -28,7 +29,7 @@ class Client extends React.Component {
     }
 
     onSubmit(city) {
-        
+        const errorPreamble = 'city ' + city + ' returned ';
         window.fetch('/api?city=' + city)
             .then(response => {
                 return response.json()
@@ -40,10 +41,10 @@ class Client extends React.Component {
                       window.history.pushState(this.state.weatherData, 'Meteorology: ' + city, '/?city=' + city);
                   }
                 } else {
-                  this.setState({errorMessage: 'city ' + city + ' returned ' + json.message});
+                  this.setState({errorMessage: errorPreamble + json.message});
                 }
             }).catch(err => {
-                this.setState({errorMessage: err});
+                this.setState({errorMessage: errorPreamble + err});
         });
 
     }

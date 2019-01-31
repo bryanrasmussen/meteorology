@@ -27,7 +27,7 @@ server.get('/script/*', (req, res) => {
         {
           res.send(data);
         } else {
-          res.send('throw javascriptLoadError;');
+          res.send('throw "Could not load requested script";');
         }
       }
     );
@@ -58,7 +58,7 @@ server.get('/', (req, res) => {
       )
     );
   }, (error) => {
-    const title = 'Meteorology: ' + city + ' Error';
+    const title = 'Meteorology: ' + city + ' Error: ' + error;
     res.send(
       HtmlError(
         title
