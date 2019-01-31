@@ -17,8 +17,6 @@ const Html = ({ body, title, data }) => `
       <noscript><div id="app">${body}</div></noscript>
       <div id="clientSideApp"></div>
       <script>var weatherData = ${data}</script>
-      <script crossorigin  src="http://unpkg.com/react@16/umd/react.development.js"></script>
-      <script crossorigin  src="http://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
       <script src="/script/client.js"></script>
     </body>
   </html>
